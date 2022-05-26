@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppXamarin.Views.HomePageDetail"
+             xmlns:convert="clr-namespace:AppXamarin.Converter"
+             Title="Pagina Principal">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <convert:NullToBoolConverter x:Key="NullToBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Padding="10, 20, 10, 10" x:Name="lblTitle" Text="Jimbo - NET" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <Label Padding="20, 10, 20, 10" FontSize="14" Text="Bienvenido a Jimbo-NET donde podras encontrar productos relacionados con todo lo que es tecnologia."/>
+
+                <StackLayout Padding="20, 0, 20, 20">
+                    <Picker x:Name="filter" Title="Filtrar por Categoria"></Picker>
+                </StackLayout>
+
+                <StackLayout x:Name="Hola"></StackLayout>
+                
+                <ListView x:Name="products" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="viewCells">
+                                <StackLayout Padding="20, 20, 20, 20">
+                                    <Image x:Name="imgProduct" Source="{Binding Image}" HeightRequest="200" WidthRequest="200" />
+                                    <Label Text="{Binding Name}" FontSize="21" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" FontSize="16" />
+                                    <Label Text="{Binding Category, StringFormat='Categoria: {0:F0}'}" FontSize="16"/>
+                                    <Label Text="{Binding Price, StringFormat='$ {0:F0}'}" FontSize="20" FontAttributes="Italic"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

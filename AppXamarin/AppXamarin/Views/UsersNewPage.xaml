@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppXamarin.Views.UsersNewPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20,0,20,0" VerticalOptions="Center">
+                <Label Text="Registrar Usuario" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <StackLayout Margin="0, 10, 0, 10">
+                    <Entry x:Name="name" Placeholder="Nombre y Apellido"/>
+                </StackLayout>
+
+                <StackLayout Margin="0, 10, 0, 10">
+                    <Entry x:Name="email" Placeholder="Correo Electronico"/>
+                </StackLayout>
+
+                <StackLayout Margin="0, 10, 0, 10">
+                    <Entry x:Name="password" Placeholder="Contraseña" IsPassword="True"/>
+                </StackLayout>
+
+                <StackLayout Margin="0, 10, 0, 10">
+                    <Picker x:Name="filter" Title="Seleccionar Rol" FontSize="17">
+                        <Picker.Items>
+                            <x:String>Administrador</x:String>
+                            <x:String>Cliente</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Margin="0, 20, 0, 0">
+                    <Button Clicked="CreateUser" VerticalOptions="Center" Text="Crear Usuario"/>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
